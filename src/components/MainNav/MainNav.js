@@ -36,7 +36,7 @@ const MainNav = () => {
                   className={styles.nav__link}
                   activeClassName={styles['nav__link--active']}
                 >
-                  Zarejestruj się
+                  Zarejestruj się xd
                 </NavLink>
               </li>
               <li className={styles.nav__item}>
