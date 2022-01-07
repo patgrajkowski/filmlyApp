@@ -1,0 +1,12 @@
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 5rem;
+  width: 100%;
+  justify-content: center;
+}
+.spinner__wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}

@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  background-color: #ebf2fa;
+  gap: 6rem;
+  padding: 3rem;
+}
+h2 {
+  color: #145da0;
+}

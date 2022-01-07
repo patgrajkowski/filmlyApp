@@ -1,0 +1,58 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  background-color: #ebf2fa;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.movie {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+}
+.movie__img {
+  width: 15.125rem;
+  height: 21.625rem;
+  padding-right: 0.5rem;
+}
+.movie__title {
+  color: #145da0;
+}
+.movie__info {
+  width: 36rem;
+  display: flex;
+  flex-direction: column;
+}
+.movie__details {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+}
+.movie__property,
+.actor__role {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #145ca09f;
+}
+.movie__value {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.actors {
+  display: flex;
+  justify-content: space-around;
+}
+.actor__name {
+  font-size: 1.35rem;
+  font-weight: normal;
+}
+.actor__img {
+  width: 12.125rem;
+  height: 19.625rem;
+  border: 1px #145ca09f solid;
+}

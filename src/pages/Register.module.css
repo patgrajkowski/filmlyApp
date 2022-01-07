@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  width: 20rem;
+  height: 20rem;
+  background-color: #ebf2fa;
+  gap: 6rem;
+  padding: 3rem;
+}

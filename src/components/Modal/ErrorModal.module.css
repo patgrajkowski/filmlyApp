@@ -1,0 +1,28 @@
+.modal {
+  width: 30rem;
+  height: 19.5rem;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 6.5rem 3fr 1fr;
+  justify-items: center;
+  margin-bottom: 35vh;
+  background-color: #ebf2fa;
+}
+.modal__header {
+  background-color: #145da0;
+  height: 6.5rem;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+.modal__error-message {
+  font-size: 1.3rem;
+  padding: 2rem;
+}
+.modal__button {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
