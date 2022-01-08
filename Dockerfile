@@ -1,8 +1,8 @@
 FROM node:16
 WORKDIR /usr/src/frontendApp
-COPY ./app/package.json /usr/src/frontendApp
-COPY ./app/src /usr/src/frontendApp
-COPY ./app/public /usr/src/frontendApp
+COPY package.json /.
+COPY src /.
+COPY public /.
 RUN npm install
 COPY ./app .
 CMD ["npm", "start"]
