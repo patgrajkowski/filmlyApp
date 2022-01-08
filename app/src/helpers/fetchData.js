@@ -1,8 +1,6 @@
 import axios from 'axios';
 export const fetchMovies = async (url) => {
-  const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const { data: moviesInfoObj } = response;
   const moviesInfo = [];
   for (const key in moviesInfoObj) {
@@ -13,7 +11,7 @@ export const fetchMovies = async (url) => {
 export const fetchMovie = async (url) => {
   try {
     const response = await axios.get(
-      `https://filmly-backend.herokuapp.com${url}`
+      `https://filmlybackend.herokuapp.com${url}`
     );
     const { data } = response;
     return data;
@@ -25,9 +23,7 @@ export const fetchMovie = async (url) => {
   }
 };
 export const fetchRentals = async (url) => {
-  const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const { data } = response;
   const rentals = [];
   for (const key in data) {
@@ -36,16 +32,12 @@ export const fetchRentals = async (url) => {
   return rentals;
 };
 export const fetchRental = async (url) => {
-  const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const { data } = response;
   return data;
 };
 export const fetchCustomers = async (url) => {
-  const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const { data } = response;
   const customers = [];
   for (const key in data) {
@@ -55,9 +47,7 @@ export const fetchCustomers = async (url) => {
   return customers;
 };
 export const fetchCustomer = async (url) => {
-  const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const data = response.data;
   return data[0];
 };

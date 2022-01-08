@@ -4,5 +4,5 @@ COPY ./app/package.json /usr/src/frontendApp
 COPY ./app/src /usr/src/frontendApp
 COPY ./app/public /usr/src/frontendApp
 RUN npm install
-COPY . .
+COPY ./app .
 CMD ["npm", "start"]
