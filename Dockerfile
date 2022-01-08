@@ -4,5 +4,5 @@ COPY package.json ./
 COPY src ./
 COPY public ./
 RUN npm install
-COPY ./app ./
+COPY . ./
 CMD ["npm", "start"]
