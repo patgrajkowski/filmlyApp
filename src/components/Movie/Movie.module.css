@@ -7,17 +7,9 @@
   margin: 2rem;
   background-color: #ebf2fa;
 }
-.movie--unavalible {
-  filter: grayscale(100%);
-  opacity: 0.9;
-}
 .movie:hover {
   cursor: pointer;
   transform: scale(1.15);
-}
-.movie--unavalible:hover {
-  transform: none;
-  cursor: not-allowed;
 }
 .movie__img {
   width: 13.125rem;
@@ -53,4 +45,10 @@
   font-weight: normal;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .movie {
+    width: 100%;
+    margin: 0;
+  }
 }
