@@ -5,7 +5,6 @@ import { Link, Route } from 'react-router-dom';
 import RentalsTable from './RentalsTable';
 import CustomersTable from './CustomersTable';
 import Button from '../UI/Button/Button';
-import Card from '../UI/Card/Card';
 const AdminPanel = () => {
   return (
     <div className={styles.wrapper}>

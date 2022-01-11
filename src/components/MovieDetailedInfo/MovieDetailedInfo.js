@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchMovie } from '../../helpers/fetchData';
+import Comments from '../Comments/Comments';
 import ErrorModal from '../Modal/ErrorModal';
-import Button from '../UI/Button/Button';
 import Card from '../UI/Card/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import styles from './MovieDetailedInfo.module.css';
@@ -39,12 +39,12 @@ const MovieDetailedInfo = () => {
   };
   return (
     <React.Fragment>
-      {isLoading ? (
-        <div className={styles.spinner__wrapper}>
-          <LoadingSpinner />
-        </div>
-      ) : (
-        <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
+        {isLoading ? (
+          <div className={styles.spinner__wrapper}>
+            <LoadingSpinner />
+          </div>
+        ) : (
           <Card className={styles.card}>
             {movie === 404 ? (
               <h1>Film o wybranym ID nie isnieje!</h1>
@@ -96,19 +96,13 @@ const MovieDetailedInfo = () => {
                     </div>
                   ))}
                 </div>
-                {!(movie.stock === 0) && (
-                  <Button
-                    fullwidth={true}
-                    onClick={isAuth ? handleClick : handleClickError}
-                  >
-                    Wypożycz
-                  </Button>
-                )}
+                <h2>Komentarze</h2>
+                <Comments />
               </>
             )}
           </Card>
-        </div>
-      )}
+        )}
+      </div>
       {error ? (
         <ErrorModal
           message='Aby wypożyczyć film musisz być zalogowany.'
