@@ -52,6 +52,9 @@
     margin: 0;
     margin-top: 2rem;
   }
+  .movie:hover {
+    transform: none;
+  }
 }
 @media only screen and (max-width: 600px) {
   .movie {
@@ -63,5 +66,8 @@
   }
   .movie__img {
     width: 40%;
+  }
+  .movie:hover {
+    transform: none;
   }
 }
