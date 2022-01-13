@@ -46,6 +46,7 @@
 .actors {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .actor__name {
   font-size: 1.35rem;
@@ -70,8 +71,5 @@
   }
   .movie__info {
     width: 100%;
-  }
-  .actors {
-    flex-wrap: wrap;
   }
 }

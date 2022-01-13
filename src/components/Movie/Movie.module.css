@@ -60,6 +60,7 @@
   .movie {
     height: 15rem;
     margin: 0;
+    padding: 0;
   }
   .movie__details {
     gap: 0;
@@ -69,5 +70,11 @@
   }
   .movie:hover {
     transform: none;
+  }
+  .movie__property {
+    padding: 0;
+  }
+  .movie__value {
+    padding: 0;
   }
 }
