@@ -10,7 +10,7 @@
   justify-content: center;
   padding-top: 2rem;
 }
-@media only screen and (max-width: 1036px) {
+@media only screen and (max-width: 1054px) {
   .movies {
     grid-template-columns: 1fr;
     gap: 1rem;

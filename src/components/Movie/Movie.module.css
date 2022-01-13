@@ -46,7 +46,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-@media only screen and (max-width: 1036px) {
+@media only screen and (max-width: 1054px) {
   .movie {
     width: 100%;
     margin: 0;
@@ -54,12 +54,9 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  * {
-    margin: 0;
-    padding: 0;
-  }
   .movie {
     height: 15rem;
+    margin: 0;
   }
   .movie__details {
     gap: 0;

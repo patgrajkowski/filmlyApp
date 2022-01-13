@@ -1,0 +1,9 @@
+.searchbar {
+  margin-left: auto;
+  width: 70rem;
+  margin-right: auto;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}

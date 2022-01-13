@@ -49,16 +49,13 @@ const MovieDetailedInfo = () => {
             {movie === 404 ? (
               <h1>Film o wybranym ID nie isnieje!</h1>
             ) : (
-              <>
-                {' '}
+              <React.Fragment>
                 <div className={styles.movie}>
-                  <div>
-                    <img
-                      src={movie.img}
-                      alt={movie.title}
-                      className={styles.movie__img}
-                    />
-                  </div>
+                  <img
+                    src={movie.img}
+                    alt={movie.title}
+                    className={styles.movie__img}
+                  />
                   <div className={styles.movie__info}>
                     <h2 className={styles.movie__title}>{movie.title}</h2>
                     <p>{movie.plot}</p>
@@ -73,10 +70,6 @@ const MovieDetailedInfo = () => {
                       </h3>
                       <h3 className={styles.movie__property}>ocena</h3>
                       <h3 className={styles.movie__value}>{movie.rate}</h3>
-                      <h3 className={styles.movie__property}>dostępność</h3>
-                      <h3 className={styles.movie__value}>
-                        {movie.stock} szt.
-                      </h3>
                     </div>
                   </div>
                 </div>
@@ -98,7 +91,7 @@ const MovieDetailedInfo = () => {
                 </div>
                 <h2>Komentarze</h2>
                 <Comments />
-              </>
+              </React.Fragment>
             )}
           </Card>
         )}

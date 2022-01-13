@@ -56,3 +56,22 @@
   height: 19.625rem;
   border: 1px #145ca09f solid;
 }
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .movie {
+    flex-direction: column;
+    width: 100%;
+  }
+  .movie__img {
+    align-self: center;
+  }
+  .movie__info {
+    width: 100%;
+  }
+  .actors {
+    flex-wrap: wrap;
+  }
+}

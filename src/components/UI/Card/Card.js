@@ -1,10 +1,25 @@
 import React from 'react';
 import styles from './Card.module.css';
-const Card = ({ className, children, onClick }) => {
+import { motion } from 'framer-motion';
+
+const Card = ({
+  className,
+  children,
+  onClick,
+  initial,
+  transition,
+  animate,
+}) => {
   return (
-    <div className={`${styles.card} ${className}`} onClick={onClick}>
+    <motion.div
+      className={`${styles.card} ${className}`}
+      onClick={onClick}
+      initial={initial}
+      transition={transition}
+      animate={animate}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

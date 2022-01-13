@@ -2,8 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Card from '../UI/Card/Card';
 import styles from './Movie.module.css';
+
 const Movie = ({
-  isUnavalible,
   img,
   title,
   genre,
@@ -11,6 +11,9 @@ const Movie = ({
   length,
   _id,
   onClick,
+  transition,
+  animate,
+  initial,
 }) => {
   const history = useHistory();
   const handleClick = () => {
@@ -18,10 +21,11 @@ const Movie = ({
   };
   return (
     <Card
-      className={`${styles.movie} ${
-        isUnavalible && styles['movie--unavalible']
-      }`}
+      className={styles.movie}
       onClick={onClick ? onClick : handleClick}
+      initial={initial}
+      animate={animate}
+      transition={transition}
     >
       <img src={img} alt='img' className={styles.movie__img} />
       <div className={styles.movie__info}>

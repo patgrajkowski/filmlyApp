@@ -1,23 +1,20 @@
 import React from 'react';
-import SearchBar from '../UI/SearchBar/SearchBar';
 import styles from './NavBar.module.css';
-import hamburgerIcon from '../../images/hamburger_icon.svg';
 import { useSelector } from 'react-redux';
-import Logo from './Logo';
-import NavLinks from './NavLinks';
+import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
+import { useMediaQuery } from 'react-responsive';
+
 const NavBar = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
+  const isMobile = useMediaQuery({ query: `(max-width: 1000px)` });
   return (
     <header className={styles.header}>
-      <img src={hamburgerIcon} alt='hamburger' />
-      <Logo></Logo>
-      <SearchBar
-        className={styles.searchbar}
-        placeholder='Wyszukaj wpisując nazwę filmu lub gatunek'
-      />
-      <nav className={styles.nav}>
-        <NavLinks></NavLinks>
-      </nav>
+      {isMobile ? (
+        <MobileNav class={styles.nav__mobile} />
+      ) : (
+        <DesktopNav class={styles.nav__desktop} />
+      )}
     </header>
   );
 };

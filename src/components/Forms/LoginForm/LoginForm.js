@@ -5,7 +5,6 @@ import styles from './LoginForm.module.css';
 import Card from '../../UI/Card/Card';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
-import axios from 'axios';
 import { fetchCustomer } from '../../../helpers/fetchData';
 import { useDispatch, useSelector } from 'react-redux';
 import { authAction } from '../../../store/store';

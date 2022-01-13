@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import gsap from 'gsap';
 import Movie from '../components/Movie/Movie';
 import styles from './Movies.module.css';
-import ErrorModal from '../components/Modal/ErrorModal';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { filterMovies } from '../helpers/filterMovies';
 import { fetchMovies } from '../helpers/fetchData';
@@ -16,16 +14,11 @@ const Movies = ({ children }) => {
   const sortParam = queryParams.get('sort');
   const [sort, setSort] = useState(sortParam);
   const [isLoading, setIsLoading] = useState(false);
-  const [unavalibleClicked, setUnavalibleClicked] = useState(false);
   const searchedText = useSelector((state) => state.search.searchedText);
+  const filteredMovies = filterMovies(movies, searchedText);
+  const sortedMovies = sortArray(filteredMovies, sort);
   const wrapper = useRef();
   const history = useHistory();
-  const handleUnavalibleOnClick = () => {
-    setUnavalibleClicked(true);
-  };
-  const handleErrorOnClick = () => {
-    setUnavalibleClicked(false);
-  };
   const handleSelect = (event) => {
     setSort(event.target.value);
     history.push(`?search=${searchedText}&sort=${event.target.value}`);
@@ -37,17 +30,9 @@ const Movies = ({ children }) => {
     setMovies(moviesInfo);
     setIsLoading(false);
   };
-
   useEffect(() => {
     populateMovieList();
-    gsap.fromTo(
-      wrapper.current,
-      { y: 100, autoAlpha: 0 },
-      { duration: 2, ease: 'power3.inOut', y: '-=100', autoAlpha: 1 }
-    );
   }, []);
-  const filteredMovies = filterMovies(movies, searchedText);
-  const sortedMovies = sortArray(filteredMovies, sort);
   return (
     <React.Fragment>
       {isLoading ? (
@@ -65,7 +50,7 @@ const Movies = ({ children }) => {
           </select>
           <div className={styles.movies} ref={wrapper}>
             {sortedMovies.map(
-              ({ _id, img, title, genre, director, length, stock }) => (
+              ({ _id, img, title, genre, director, length }) => (
                 <Movie
                   _id={_id}
                   key={_id}
@@ -74,19 +59,14 @@ const Movies = ({ children }) => {
                   genre={genre}
                   director={director}
                   length={length}
-                  isUnavalible={stock === 0}
-                  onClick={stock === 0 ? handleUnavalibleOnClick : null}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
                 />
               )
             )}
           </div>
         </>
-      )}
-      {unavalibleClicked && (
-        <ErrorModal
-          message='Wygląda na to, że wybrany film jest w tej chwili niedostępny. Spróbuj ponownie później.'
-          onClick={handleErrorOnClick}
-        />
       )}
       {children}
     </React.Fragment>
