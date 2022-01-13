@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  background-color: #0c2d48;
+  height: 6rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.searchbar {
+  margin-left: auto;
+  width: 70rem;
+  margin-right: auto;
+}

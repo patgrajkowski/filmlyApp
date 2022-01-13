@@ -1,0 +1,13 @@
+.logo {
+  display: flex;
+}
+.logo__img {
+  width: 4.5rem;
+}
+.logo__h1 {
+  color: white;
+  padding-right: 2rem;
+}
+.logo__link {
+  text-decoration: none;
+}
