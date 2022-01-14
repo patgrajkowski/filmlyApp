@@ -38,7 +38,7 @@ const RegisterForm = () => {
         console.log(`Email: ${email}, password: ${password}`);
         axios
           .post(
-            'http://localhost:3001/api/users',
+            'https://filmly-backend.herokuapp.com/api/users',
             { nickname, email, password },
             {
               headers: {
