@@ -1,8 +1,6 @@
 import axios from 'axios';
 export const fetchMovies = async (url) => {
-  const response = await axios.get(
-    `https://filmlybackend.herokuapp.com/api/s${url}`
-  );
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
   const { data: moviesInfoObj } = response;
   const moviesInfo = [];
   for (const key in moviesInfoObj) {
