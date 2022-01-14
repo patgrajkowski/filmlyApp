@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const fetchMovies = async (url) => {
   const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
+    `https://filmlybackend.herokuapp.com/api/s${url}`
   );
   const { data: moviesInfoObj } = response;
   const moviesInfo = [];
@@ -13,7 +13,7 @@ export const fetchMovies = async (url) => {
 export const fetchMovie = async (url) => {
   try {
     const response = await axios.get(
-      `https://filmly-backend.herokuapp.com${url}`
+      `https://filmlybackend.herokuapp.com/api/s${url}`
     );
     const { data } = response;
     return data;
@@ -26,7 +26,7 @@ export const fetchMovie = async (url) => {
 };
 export const fetchRentals = async (url) => {
   const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
+    `https://filmlybackend.herokuapp.com/api/s${url}`
   );
   const { data } = response;
   const rentals = [];
@@ -37,14 +37,14 @@ export const fetchRentals = async (url) => {
 };
 export const fetchRental = async (url) => {
   const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
+    `https://filmlybackend.herokuapp.com/api/s${url}`
   );
   const { data } = response;
   return data;
 };
 export const fetchCustomers = async (url) => {
   const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
+    `https://filmlybackend.herokuapp.com/api/s${url}`
   );
   const { data } = response;
   const customers = [];
@@ -56,7 +56,7 @@ export const fetchCustomers = async (url) => {
 };
 export const fetchCustomer = async (url) => {
   const response = await axios.get(
-    `https://filmly-backend.herokuapp.com${url}`
+    `https://filmlybackend.herokuapp.com/api/s${url}`
   );
   const data = response.data;
   return data[0];
