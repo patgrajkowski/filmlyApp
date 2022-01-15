@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import styles from './LoginForm.module.css';
@@ -10,6 +10,7 @@ import axios from 'axios';
 import AuthContext from '../../../store/auth-context';
 
 const LoginForm = () => {
+  const [loginError, setLoginError] = useState('');
   const authCtx = useContext(AuthContext);
   const history = useHistory();
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
@@ -39,10 +40,12 @@ const LoginForm = () => {
           )
           .then(function (response) {
             authCtx.login(response.data);
+            setLoginError('');
             history.push('/');
           })
           .catch(function (error) {
-            console.log(error.response);
+            if (error.response.status === 400)
+              setLoginError('Błędne hasło bądź email, spróbuj ponownie');
           });
       },
     });
@@ -75,6 +78,8 @@ const LoginForm = () => {
         ></Input>
         <div className={styles.form__errorMessage}>
           {touched.password && errors.password ? errors.password : ' '}
+          <br />
+          {loginError ? loginError : ' '}
         </div>
         <Button
           type='submit'
