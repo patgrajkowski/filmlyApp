@@ -33,7 +33,11 @@ const Comments = () => {
             ? comments.map((comment) => (
                 <div className={styles.comment__wrapper} key={comment._id}>
                   <img
-                    src={comment.user.avatar}
+                    src={
+                      comment.user.avatar
+                        ? comment.user.avatar
+                        : 'https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar-600x600.png'
+                    }
                     alt='avatar'
                     className={styles.comment__avatar}
                   ></img>
