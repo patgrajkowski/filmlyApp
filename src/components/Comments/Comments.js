@@ -7,6 +7,7 @@ import styles from './Comments.module.css';
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [reloadCommentsTrigger, setReloadCommentsTrigger] = useState(true);
   const params = useParams();
   const getComments = async () => {
     setIsLoading(true);
@@ -16,9 +17,12 @@ const Comments = () => {
     setComments(comments);
     setIsLoading(false);
   };
+  const triggerReload = () => {
+    setReloadCommentsTrigger(!reloadCommentsTrigger);
+  };
   useEffect(() => {
     getComments();
-  }, []);
+  }, [reloadCommentsTrigger]);
   return (
     <div className={styles.comments}>
       {isLoading ? (
@@ -47,7 +51,7 @@ const Comments = () => {
         </>
       )}
 
-      <CommentsForm />
+      <CommentsForm movieId={params.movieId} reloadComments={triggerReload} />
     </div>
   );
 };
