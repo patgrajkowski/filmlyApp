@@ -5,16 +5,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Movies from './pages/Movies';
 import MovieDetailedInfo from './components/MovieDetailedInfo/MovieDetailedInfo';
-import MyRentals from './components/MyRentals/MyRentals';
 function App() {
   return (
     <React.Fragment>
       <Layout>
         <Route path='/' exact>
           <Redirect to='/filmy' />
-        </Route>
-        <Route path='/moje-wypozyczenia'>
-          <MyRentals />
         </Route>
         <Route path='/filmy' exact>
           <Movies />

@@ -13,6 +13,7 @@ const MovieDetailedInfo = () => {
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState({});
+
   const [actors, setActors] = useState([{}]);
   const [error, setError] = useState(false);
   const getMovieInfo = async () => {

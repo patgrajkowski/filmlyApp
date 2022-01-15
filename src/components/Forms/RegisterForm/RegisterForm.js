@@ -15,6 +15,7 @@ const RegisterForm = () => {
       initialValues: {
         email: ' ',
         password: ' ',
+        avatar: '',
       },
       validationSchema: Yup.object({
         nickname: Yup.string()
@@ -23,6 +24,12 @@ const RegisterForm = () => {
         email: Yup.string()
           .email('Wprowadź poprawny adres email')
           .required('Email jest wymagany.'),
+        avatar: Yup.string()
+          .matches(
+            /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i,
+            'Link jest niepoprawny'
+          )
+          .required('Adres url jest wymagany'),
         password: Yup.string()
           .min(6, 'Hasło musi posiadać conajmniej 6 znaków')
           .required('Hasło jest wymagane'),
@@ -34,12 +41,12 @@ const RegisterForm = () => {
           }
         ),
       }),
-      onSubmit: ({ nickname, email, password }) => {
+      onSubmit: ({ nickname, email, password, avatar }) => {
         console.log(`Email: ${email}, password: ${password}`);
         axios
           .post(
             'https://filmlybackend.herokuapp.com/api/users',
-            { nickname, email, password },
+            { nickname, email, password, avatar },
             {
               headers: {
                 'content-type': 'application/json',
@@ -83,6 +90,19 @@ const RegisterForm = () => {
         ></Input>
         <div className={styles.form__errorMessage}>
           {touched.email && errors.email ? errors.email : ' '}
+        </div>
+        <Input
+          value={values.avatar}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          id='avatar'
+          name='avatar'
+          type='text'
+          className={styles.form__input}
+          placeholder='URL do avatara'
+        ></Input>
+        <div className={styles.form__errorMessage}>
+          {touched.avatar && errors.avatar ? errors.avatar : ' '}
         </div>
         <Input
           onBlur={handleBlur}

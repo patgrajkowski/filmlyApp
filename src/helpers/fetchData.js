@@ -22,3 +22,12 @@ export const fetchMovie = async (url) => {
     return error.response.status;
   }
 };
+export const fetchComments = async (url) => {
+  const response = await axios.get(`http://localhost:3002${url}`);
+  const { data } = response;
+  const comments = [];
+  for (const key in data) {
+    comments.push(data[key]);
+  }
+  return comments;
+};
