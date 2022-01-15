@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchMovie } from '../../helpers/fetchData';
@@ -26,11 +25,6 @@ const MovieDetailedInfo = () => {
   useEffect(() => {
     getMovieInfo();
   }, []);
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  const handleClick = () => {};
-  const handleClickError = () => {
-    setError(true);
-  };
   const handleErrorOnClick = () => {
     setError(false);
   };

@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentsForm from '../Forms/CommentForm';
 import styles from './Comments.module.css';
 const Comments = () => {
   return (
@@ -25,6 +26,7 @@ const Comments = () => {
           <p class={styles.comment__content}>Fajny film</p>
         </div>
       </div>
+      <CommentsForm />
     </div>
   );
 };

@@ -47,7 +47,6 @@ const RegisterForm = () => {
             }
           )
           .then(function (response) {
-            console.log(response);
             history.push('/');
           })
           .catch(function (error) {

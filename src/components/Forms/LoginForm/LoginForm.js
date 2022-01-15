@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import styles from './LoginForm.module.css';
 import Card from '../../UI/Card/Card';
 import Input from '../../UI/Input/Input';
 import Button from '../../UI/Button/Button';
-import { fetchCustomer } from '../../../helpers/fetchData';
-import { useDispatch, useSelector } from 'react-redux';
-import { authAction } from '../../../store/store';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import axios from 'axios';
+import AuthContext from '../../../store/auth-context';
 
 const LoginForm = () => {
-  const dispatch = useDispatch();
+  const authCtx = useContext(AuthContext);
   const history = useHistory();
-  const isAuth = useSelector((state) => state.auth.isAuth);
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
     useFormik({
       initialValues: {
@@ -29,12 +27,23 @@ const LoginForm = () => {
           .required('Hasło jest wymagane'),
       }),
       onSubmit: async ({ email, password }) => {
-        console.log(email);
-        const response = await fetchCustomer(`/api/customers/${email}`);
-        if (response.password === password)
-          dispatch(authAction.login(response._id));
-        console.log(response.password);
-        history.push('/moje-wypozyczenia');
+        axios
+          .post(
+            'https://filmlybackend.herokuapp.com/api/auth',
+            { email, password },
+            {
+              headers: {
+                'content-type': 'application/json',
+              },
+            }
+          )
+          .then(function (response) {
+            authCtx.login(response.data);
+            history.push('/');
+          })
+          .catch(function (error) {
+            console.log(error.response);
+          });
       },
     });
   return (

@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './NavLinks.module.css';
 import { motion } from 'framer-motion';
+import AuthContext from '../../store/auth-context';
 
 const NavLinks = ({ isMobile, closeMenu }) => {
   const animateFrom = { opacity: 0, y: -40 };
   const animateTo = { opacity: 1, y: 0 };
-
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   return (
     <ul className={styles.nav__list}>
       {isMobile && (
         <motion.li
           initial={animateFrom}
           animate={animateTo}
-          transition={{delay: 0.05}}
+          transition={{ delay: 0.05 }}
           className={styles.nav__item}
           onClick={closeMenu}
         >
@@ -26,26 +28,33 @@ const NavLinks = ({ isMobile, closeMenu }) => {
           </NavLink>
         </motion.li>
       )}
-      <motion.li
-        initial={animateFrom}
-        animate={animateTo}
-        transition={{delay: 0.1}}
-        className={styles.nav__item}
-        onClick={closeMenu}
-      >
-        <NavLink
-          to='/moje-wypozyczenia'
-          className={styles.nav__link}
-          activeClassName={styles['nav__link--active']}
-        >
-          Moje komentarze
-        </NavLink>
-      </motion.li>
-      <>
+      {isLoggedIn ? (
         <motion.li
           initial={animateFrom}
           animate={animateTo}
-          transition={{delay: 0.15}}
+          transition={{ delay: 0.1 }}
+          className={styles.nav__item}
+          onClick={closeMenu}
+        >
+          <NavLink
+            to='/moje-wypozyczenia'
+            className={styles.nav__link}
+            activeClassName={styles['nav__link--active']}
+          >
+            Moje komentarze
+          </NavLink>
+        </motion.li>
+      ) : (
+        ''
+      )}
+
+      {isLoggedIn ? (
+        ''
+      ) : (
+        <motion.li
+          initial={animateFrom}
+          animate={animateTo}
+          transition={{ delay: 0.15 }}
           className={styles.nav__item}
           onClick={closeMenu}
         >
@@ -57,22 +66,23 @@ const NavLinks = ({ isMobile, closeMenu }) => {
             Zarejestruj się
           </NavLink>
         </motion.li>
-        <motion.li
-          initial={animateFrom}
-          animate={animateTo}
-          transition={{delay: 0.2}}
-          className={styles.nav__item}
-          onClick={closeMenu}
+      )}
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        transition={{ delay: 0.2 }}
+        className={styles.nav__item}
+        onClick={closeMenu}
+      >
+        <NavLink
+          to='/logowanie'
+          className={styles.nav__link}
+          activeClassName={styles['nav__link--active']}
+          onClick={isLoggedIn && authCtx.logout}
         >
-          <NavLink
-            to='/logowanie'
-            className={styles.nav__link}
-            activeClassName={styles['nav__link--active']}
-          >
-            Zaloguj się
-          </NavLink>
-        </motion.li>
-      </>
+          {isLoggedIn ? 'Wyloguj się' : 'Zaloguj się'}
+        </NavLink>
+      </motion.li>
     </ul>
   );
 };

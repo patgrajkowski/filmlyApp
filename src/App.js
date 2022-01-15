@@ -5,7 +5,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Movies from './pages/Movies';
 import MovieDetailedInfo from './components/MovieDetailedInfo/MovieDetailedInfo';
-import AdminPanel from './components/AdminPanel/AdminPanel';
 import MyRentals from './components/MyRentals/MyRentals';
 function App() {
   return (
@@ -28,9 +27,6 @@ function App() {
         </Route>
         <Route path='/rejestracja'>
           <Register />
-        </Route>
-        <Route path='/admin'>
-          <AdminPanel />
         </Route>
       </Layout>
     </React.Fragment>
