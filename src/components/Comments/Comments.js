@@ -53,14 +53,3 @@ const Comments = () => {
 };
 
 export default Comments;
-//             <div className={styles.comment__wrapper}>
-//               <img
-//                 src='https://i.imgur.com/d2crFEH.png'
-//                 alt='avatar'
-//                 className={styles.comment__avatar}
-//               ></img>
-//               <div className={styles.comment__user}>
-//                 <h3 className={styles.comment__nickname}>Patryk</h3>
-//                 <p className={styles.comment__content}>Fajny film</p>
-//               </div>
-//             </div>;
