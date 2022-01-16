@@ -5,5 +5,5 @@ COPY src ./
 COPY public ./
 RUN npm install
 COPY . ./
-CMD ["npm", "build"]
-CMD ["npm", "serve build"]
+CMD ["npm", "run build"]
+CMD ["npx", "serve build"]
