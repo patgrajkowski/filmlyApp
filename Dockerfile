@@ -6,4 +6,5 @@ COPY public ./
 RUN npm install
 COPY . ./
 CMD ["npm", "run build"]
+CMD ["npm", "i build"]
 CMD ["npx", "serve build"]
