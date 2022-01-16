@@ -79,7 +79,7 @@ const NavLinks = ({ isMobile, closeMenu }) => {
           activeClassName={styles['nav__link--active']}
           onClick={isLoggedIn && authCtx.logout}
         >
-          {isLoggedIn ? 'Wyloguj sie' : 'Zaloguj sie'}
+          {isLoggedIn ? 'Wyloguj się' : 'Zaloguj się'}
         </NavLink>
       </motion.li>
     </ul>
