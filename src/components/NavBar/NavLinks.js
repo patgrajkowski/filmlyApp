@@ -28,25 +28,6 @@ const NavLinks = ({ isMobile, closeMenu }) => {
           </NavLink>
         </motion.li>
       )}
-      {isLoggedIn ? (
-        <motion.li
-          initial={animateFrom}
-          animate={animateTo}
-          transition={{ delay: 0.1 }}
-          className={styles.nav__item}
-          onClick={closeMenu}
-        >
-          <NavLink
-            to='/moje-wypozyczenia'
-            className={styles.nav__link}
-            activeClassName={styles['nav__link--active']}
-          >
-            Moje komentarze
-          </NavLink>
-        </motion.li>
-      ) : (
-        ''
-      )}
 
       {isLoggedIn ? (
         ''

@@ -42,7 +42,6 @@ const RegisterForm = () => {
         ),
       }),
       onSubmit: ({ nickname, email, password, avatar }) => {
-        console.log(`Email: ${email}, password: ${password}`);
         axios
           .post(
             'https://filmlybackend.herokuapp.com/api/users',

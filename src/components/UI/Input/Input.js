@@ -9,6 +9,7 @@ const Input = ({
   onBlur,
   id,
   name,
+  value,
 }) => (
   <input
     type={type}
@@ -18,6 +19,7 @@ const Input = ({
     className={`${styles.input} ${className}`}
     onChange={onChange}
     onBlur={onBlur}
+    value={value}
   ></input>
 );
 

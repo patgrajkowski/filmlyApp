@@ -1,0 +1,99 @@
+.wrapper {
+  width: 100%;
+  min-width: 790px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.card {
+  background-color: #0c2d48;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card h2 {
+  color: #ebf2fa;
+}
+.table {
+  background-color: #ebf2fa;
+  width: 100%;
+}
+.table__properties,
+.table__singleValue {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
+  row-gap: 0;
+  word-wrap: break-word;
+  border: 1px black solid;
+  overflow: auto;
+}
+.rentalsTable__properties,
+.rentalsTable__singleValue {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  row-gap: 0;
+  word-wrap: break-word;
+  border: 1px black solid;
+  overflow: auto;
+}
+.customersTable__properties,
+.customersTable__singleValue {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 16.65%);
+  row-gap: 0;
+  word-wrap: break-word;
+  border: 1px black solid;
+  overflow: auto;
+}
+.form__wrapper {
+  width: 30rem;
+  background-color: inherit;
+  padding: 0.4rem;
+  background-color: #ebf2fa;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: warp;
+}
+.form {
+  background-color: inherit;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: warp;
+}
+.form__errorMessage {
+  height: 3rem;
+  color: #0c2d48;
+}
+.form__title {
+  color: #145da0;
+}
+.form__input {
+  padding: 0.5rem;
+}
+.form__textarea {
+  background-color: inherit;
+  width: 100%;
+  border: rgba(0, 0, 0, 0.281) 1px solid;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+}
+.deleteForm__wrapper {
+  width: 30rem;
+  height: 40vh;
+  background-color: inherit;
+  padding: 0.4rem;
+  background-color: #ebf2fa;
+  display: flex;
+  flex-direction: column;
+}
+.deleteForm__button {
+  margin-top: 2rem;
+}

@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Movies from './pages/Movies';
 import MovieDetailedInfo from './components/MovieDetailedInfo/MovieDetailedInfo';
+import AdminPanel from './components/Admin/AdminPanel';
 function App() {
   return (
     <React.Fragment>
@@ -16,13 +17,16 @@ function App() {
           <Movies />
         </Route>
         <Route path='/filmy/:movieId'>
-          <MovieDetailedInfo></MovieDetailedInfo>
+          <MovieDetailedInfo />
         </Route>
         <Route path='/logowanie'>
           <Login />
         </Route>
         <Route path='/rejestracja'>
           <Register />
+        </Route>
+        <Route path='/admin'>
+          <AdminPanel />
         </Route>
       </Layout>
     </React.Fragment>

@@ -31,3 +31,12 @@ export const fetchComments = async (url) => {
   }
   return comments;
 };
+export const fetchUsers = async (url) => {
+  const response = await axios.get(`https://filmlybackend.herokuapp.com${url}`);
+  const { data } = response;
+  const users = [];
+  for (const key in data) {
+    users.push(data[key]);
+  }
+  return users;
+};
