@@ -135,7 +135,7 @@ const MovieAddForm = () => {
   return (
     <Card className={styles.form__wrapper}>
       <Button onClick={handleBack}>Wróć</Button>
-      <h2 className={styles.form__title}>Edytuj film</h2>
+      <h2 className={styles.form__title}>Dodaj film</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
           value={values.title}
