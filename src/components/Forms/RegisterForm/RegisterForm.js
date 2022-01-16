@@ -13,9 +13,10 @@ const RegisterForm = () => {
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
     useFormik({
       initialValues: {
-        email: ' ',
-        password: ' ',
+        email: '',
+        password: '',
         avatar: '',
+        confirmPassword: '',
       },
       validationSchema: Yup.object({
         nickname: Yup.string()

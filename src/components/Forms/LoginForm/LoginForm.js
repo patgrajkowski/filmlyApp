@@ -16,8 +16,8 @@ const LoginForm = () => {
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
     useFormik({
       initialValues: {
-        email: ' ',
-        password: ' ',
+        email: '',
+        password: '',
       },
       validationSchema: Yup.object({
         email: Yup.string()
@@ -39,7 +39,7 @@ const LoginForm = () => {
             }
           )
           .then(function (response) {
-            authCtx.login(response.data);
+            authCtx.login(response.data.token, response.data.isAdmin);
             setLoginError('');
             history.push('/');
           })

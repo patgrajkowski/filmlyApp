@@ -30,7 +30,25 @@ const NavLinks = ({ isMobile, closeMenu }) => {
       )}
 
       {isLoggedIn ? (
-        ''
+        authCtx.isAdmin ? (
+          <motion.li
+            initial={animateFrom}
+            animate={animateTo}
+            transition={{ delay: 0.05 }}
+            className={styles.nav__item}
+            onClick={closeMenu}
+          >
+            <NavLink
+              to='/admin'
+              className={styles.nav__link}
+              activeClassName={styles['nav__link--active']}
+            >
+              Panel Administratora
+            </NavLink>
+          </motion.li>
+        ) : (
+          ''
+        )
       ) : (
         <motion.li
           initial={animateFrom}
