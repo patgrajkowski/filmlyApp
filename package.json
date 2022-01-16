@@ -18,13 +18,11 @@
     "react-responsive": "^9.0.0-beta.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
+    "mini-css-extract-plugin": "2.4.5",
     "redux": "^4.1.2",
     "serve": "^13.0.2",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.11"
-  },
-    "overrides": {
-    "mini-css-extract-plugin": "2.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,5 +48,4 @@
       "last 1 safari version"
     ]
   }
-
 }
