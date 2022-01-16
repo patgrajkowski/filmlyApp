@@ -3,7 +3,6 @@ WORKDIR /usr/src/frontendApp
 COPY package.json ./
 COPY src ./
 COPY public ./
-RUN npm install
+RUN npm install && npm run build
 COPY . ./
-RUN npm run build
 CMD ["npx", "serve"]
