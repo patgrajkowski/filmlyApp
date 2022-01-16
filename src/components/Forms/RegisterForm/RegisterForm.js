@@ -137,6 +137,7 @@ const RegisterForm = () => {
           fullwidth={true}
           className={styles.form__button}
           secondary={true}
+          id='register'
           disabled={
             errors.password ||
             errors.email ||

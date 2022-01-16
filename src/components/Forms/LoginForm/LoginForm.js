@@ -86,6 +86,7 @@ const LoginForm = () => {
           fullwidth={true}
           className={styles.form__button}
           secondary={true}
+          id='login'
           disabled={errors.password || errors.email || !touched.email}
         >
           Zaloguj się
