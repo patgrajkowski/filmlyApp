@@ -4,6 +4,6 @@ COPY package.json ./
 COPY src ./
 COPY public ./
 RUN npm install
-RUN npm run build
 COPY . ./
+RUN npm run build
 CMD ["npx", "serve"]
